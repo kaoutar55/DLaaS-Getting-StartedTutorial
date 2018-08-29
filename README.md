@@ -1,7 +1,34 @@
-# MITIBMCloud
-
+#Deep Learning as a Service using IBM Cloud
 
 **Note: These steps use a Command Line Interface (CLI). There is an alternative browser used interface** 
+
+Deep Learning as a Service embraces a wide array of popular open source frameworks like TensorFlow, Caffe, PyTorch and others, and offers them truly as a cloud-native service on IBM Cloud, lowering the barrier to entry for deep learning. It combines the flexibility, ease-of-use, and economics of a cloud service with the compute power of deep learning. 
+
+Here we illustrate how to run deep learning experiments using Deep Learning as a Service (DLaaS) capabilities in Watson Machine Learning.
+
+In order to use IBM DLaaS, you will need to have two IBM Cloud services a Cloud Object Storage and a Watson Machine Learning service.
+
+**Cloud Object Storage (COS)** serves as storage for the training data as well as training results and logging/monitoring data. 
+**Watson Machine Learning (WML)** which handles sotring the training and experiment information, executing the training runs and experiments, and deploying trained models.
+
+#### Training a deep learning neural networks involves the following steps:
+
+Create a Watson Machine Learning service instance
+Setup COS to define buckets for reading the training data and buckets for writing the training results. Upload yor data to the buckets.
+Create training definition which outline the neural network (NN) architecture and the references to the COS bucket containing the input training data and output COS bucket for writing training results.
+Create an experiment config file which includes the the COS bucket with input training data, the COS bucket to write the training results, and the required GPU.
+Monitor the experiment results.
+
+#### Prerequisites:
+Before staring the tutorial make sure you have the following prerequisites.
+    *Access to IBM Cloud internal account.
+    *Your IBM Cloud API Key
+    *Python version > 3.6 
+    *IBM Cloud cli 
+    *IBM Cloud Machine learning plugin
+    *Watson ML Client library
+
+If you do not have the above prerequisites, you can follow the instructions here.
 
 ### [Steps for one time Setup:](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/onetimesetup.md)
 
