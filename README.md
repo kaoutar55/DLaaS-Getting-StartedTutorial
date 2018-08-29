@@ -6,10 +6,7 @@ Deep Learning as a Service embraces a wide array of popular open source framewor
 
 Here we illustrate how to run deep learning experiments using Deep Learning as a Service (DLaaS) capabilities in Watson Machine Learning.
 
-In order to use IBM DLaaS, you will need to have two IBM Cloud services a Cloud Object Storage and a Watson Machine Learning service.
-
-**Cloud Object Storage (COS)** serves as storage for the training data as well as training results and logging/monitoring data. 
-**Watson Machine Learning (WML)** which handles sotring the training and experiment information, executing the training runs and experiments, and deploying trained models.
+In order to use IBM DLaaS, you will need to have two IBM Cloud services a Cloud Object Storage and a Watson Machine Learning service.**Cloud Object Storage (COS)** serves as storage for the training data as well as training results and logging/monitoring data. **Watson Machine Learning (WML)** which handles sotring the training and experiment information, executing the training runs and experiments, and deploying trained models.
 
 #### Training a deep learning neural networks involves the following steps:
 
@@ -21,16 +18,27 @@ Monitor the experiment results.
 
 #### Prerequisites:
 Before staring the tutorial make sure you have the following prerequisites.
-    *Access to IBM Cloud internal account.
-    *Your IBM Cloud API Key
-    *Python version > 3.6 
-    *IBM Cloud cli 
-    *IBM Cloud Machine learning plugin
-    *Watson ML Client library
 
-If you do not have the above prerequisites, you can follow the instructions here.
+    1. Access to IBM Cloud internal account.
+    2. Your IBM Cloud API Key
+    3. Python version > 3.6 
+    4. IBM Cloud cli 
+    5. IBM Cloud Machine learning plugin
+    6. Watson ML Client library
+    7. AWS Cli
 
-### [Steps for one time Setup:](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/onetimesetup.md)
+If you do not have the above prerequisites, you can follow the instructions [here.](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/blob/master/pre-req.md)
+
+### Setting up your account to run experiments
+
+IBM Cloud account includes many interacting components and systems such as Orgs, Spaces, Resource groups, Access groups etc,.
+You can click [here](https://console.bluemix.net/docs/account/account_overview.html#overview) for more information. 
+
+`Note:MIT-IBM AI Lab users, you will have access to your project-specific Org and Resource group`
+
+Before you start running your experiments, you need to target right Cloud Foundry org, space and resource group. Then, set up your account with a Watson Machine Learning service, a Cloud Object store instance and create your aws profile.
+
+You can Click here (https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/onetimesetup.md)
 
 Step 0. Pre requisites
 
