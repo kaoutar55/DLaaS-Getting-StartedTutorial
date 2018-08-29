@@ -1,4 +1,4 @@
-# MITIBMCloud
+Welcome MIT IBM AI LAB 
 
 
 **Note: These steps use a Command Line Interface (CLI). There is an alternative browser used interface** 
