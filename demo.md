@@ -1,15 +1,16 @@
-## Tutorial
+## DLaaS Tutorial with sample model and Data
 Now, to test that your setup is working, lets try a simple model.
-
-Step 0: Get a dataset
-Step 1: Upload your dataset to the bucket
-Step 2: Edit your manifest file
-Step 3: Send code to run on Watson Studio!
-Step 4: Monitor the training
-
-### Step 0. Get a dataset 
-For example, lets get the cifar10 dataset and do a little trainning.
-You can get this dataset from the Internet, e.g., by doing:
+After the setup, Training a deep learning neural networks involves the following steps:
+```
+  1.Get a dataset
+  2.Upload your dataset to the bucket
+  3.Edit your manifest file
+  4.Send code to run on Watson Studio!
+  5. Monitor the training
+```
+### Get the sample dataset 
+For our demo, lets get the cifar10 dataset and do a smiple trainning.
+You can get this dataset from the Internet:
 ```
 mkdir cifar10
 cd cifar10
@@ -17,13 +18,14 @@ wget https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 tar xvf cifar-10-python.tar.gz
 rm cifar-10-python.tar.gz
 ```
-or
+The above commands create a new directory cifar10, download and extract the data in this directory. Then remove the tar file.
+alternatively, you could also download the data from this [link](https://ibm.box.com/s/5ss0adenqf4dow9bqynb687cuu1oh79q)
 
-Download all the data from this [link](https://ibm.box.com/s/5ss0adenqf4dow9bqynb687cuu1oh79q)
 
-
-### Step 1: Upload the dataset to your bucket:
-We assign the name of the bucket to a shell variable
+### Upload the dataset to your bucket:
+After you have the data for your training, upload this data to the cloud object store you setup previously.
+We assign the name of the bucket to a shell variable. 
+Note that name of the bucket should be unique globally and without any special charecters or upper case letters.
 ```
 $ bucket_name=<your_bucket_name>
 $ bxaws s3 cp cifar10/  s3://$bucket_name/cifar10 --recursive
@@ -34,22 +36,18 @@ $ bxaws s3 cp cifar10/  s3://$bucket_name/cifar10 --recursive
 $ bxaws  s3 ls s3://$bucket_name/cifar10
 ```
 
+### Edit your manifest file, e.g., `pytorch-cifar.yml`
 
-### Step 2: Edit your manifest file, e.g., `pytorch-cifar.yml`
+This yaml file  is the configuration which holds all the information needed for executing the job, including what bucket, ml framework, and computing instance to use.
 
-This yaml file should hold all the information needed for executing the job, including what bucket, ml framework, and computing instance to use.
+#### Copy the template manifest:
 
-
-#### 2.1. Copy the template manifest:
-
-Make a copy from 
-Download the [template](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/pytorch-cifar-template.yml)
-and then make a copy of it to be edited.
+You can find the `pytorch-cifar-template.yml` in this cloned repository. Copy the template to `my-pytorch-cifar.yml`
 
 ```
 $ cp pytorch-cifar-template.yml my-pytorch-cifar.yml
 ```
-#### 2.2. Edit the configuration file:
+#### Edit the configuration file:
 
 Edit `my-pytorch-cifar.yml`:
 Add your author info and replace the values of `aws_access_key_id`, `aws_secret_access_key`, and `bucket` 
@@ -110,14 +108,15 @@ This command will execute `main.py`, which starts a training run.
 Since no model is specified, it will use the default model, `vgg16`, 
 for 5 epochs using the dataset that we uploaded to the bucket. 
 
-### Step 3: Send code to run on Watson Studio!
+###  Run your training.
+After you uploaded the data to cloud object store. To run the training you need to send your model and the config file to the watson machine learning service.
 
-#### 3.1. Zip all the code and models into a .zip file:
+#### Zip all the code and models into a .zip file:
 ```
 $ zip model.zip main.py models/*
 ```
 
-#### 3.2. Send your code and manifest to IBM Watson Studio:
+#### Send your code and manifest to IBM Watson Studio:
 ```
 $ bx ml train model.zip pytorch-cifar.yml
 ```
@@ -126,7 +125,7 @@ $ bx ml train model.zip pytorch-cifar.yml
 
 That's it! The command should generate a training ID for you, meaning our model has started training on Watson!
 
-### Step 4: Monitor the training
+### Monitor the training
 
 #### We can check the status of all training using the command:
 ```
@@ -156,10 +155,4 @@ $ bxaws s3 cp s3://my_bucket/ < trainingID>/learner-1/training-log.txt -
 
 - [Deep Learning in IBM Studio](https://www.ibm.com/cloud/deep-learning)
 - [Deep Learning Documentation](https://dataplatform.ibm.com/docs/content/analyze-data/ml_dlaas_working_with_new_models.html)
-
-
-
-## Enjoy
-Content derived from material provided by Kaouta el Maghraoui (IBM Research), German Goldszmidt (IBM WCP),
-Hendryk Strobelt (IBM Research).
 
