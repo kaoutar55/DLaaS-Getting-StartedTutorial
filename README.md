@@ -67,7 +67,7 @@ You can click [here](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/m
  After the setup from previous section, you are ready to use DLaaS to run your training. 
  
  
- In this repository we provide you, sample data and model. You can follow the inscructions [here](https://github.com/mypublicorg/DLaaS-Getting-StartedTutorial/blob/master/demo.md) to run and monitor training in your DLaaS setup using our sample data and model.
+ In this repository we provide you, sample data and model. You can follow the inscructions [here](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/blob/master/onetimesetup.md) to run and monitor training in your DLaaS setup using our sample data and model.
 
 
  **Click [HERE](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/usefulcommands.md)  for Other useful commands**
