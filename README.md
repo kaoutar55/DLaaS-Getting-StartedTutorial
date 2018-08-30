@@ -62,7 +62,7 @@ $ bx target -r us-south -g MITIBMWatsonAiLab -o MITIBMWatsonAiLab -s dev
 You can click [here](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/master/onetimesetup.md) and follow the instructions to set up your Cloud Object Store and Watson ML service.
 
  
- ### [Optional] DLaas Tutorial with sample model and Data
+ ### [Optional] DLaaS Tutorial with sample model and Data
  
  After the setup from previous section, you are ready to use DLaaS to run your training.
  In this repository we provide you, sample data and model. 
