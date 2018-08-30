@@ -34,33 +34,34 @@ If you do not have the above prerequisites, you can follow the instructions [her
 IBM Cloud account includes many interacting components and systems such as Orgs, Spaces, Resource groups, Access groups etc,.
 You can click [here](https://console.bluemix.net/docs/account/account_overview.html#overview) for more information. 
 
-`Note:MIT-IBM AI Lab users, you will have access to your project-specific Org and Resource group`
+`Note: MIT-IBM AI Lab users should have access to your project-specific Org and Resource group`
 
 Before you start running your experiments, you need to target right Cloud Foundry org, space and resource group. Then, set up your account with a Watson Machine Learning service, a Cloud Object store instance and create your aws profile.
 
-You can Click here (https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/onetimesetup.md)
 
-Step 0. Pre requisites
+### Login to IBM Cloud and target the correct Region, Resource group, Org and Space 
 
-Step 1. Login to your bluemix account
+#### Login Using API Key:   
+Login to your IBM Cloud account using the apiKey (see [pre-requisite document](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/blob/master/pre-req.md) for . instructions on how to get your API key.
 
-Step 2. Create a Watson ML Instance
+```
+$ bx login --apikey <your_api_key>
+```
 
-    2.1 Setup a Watson ML Instance : Create WML Access key  
-    2.2 Set up Environment variables
-    
-    
-Step 3. Define a [Cloud Object Storage](https://www.ibm.com/cloud/object-storage/faq) Instance to store your data.
+#### Target correct Region, Resource group, Org and Space.
+After log in you need to target the correct region, organization, space and resourcegroup.
+It is recomended to target 'us-south' region and space 'dev'.
 
-    3.1. Create a cloud storage instance
-    3.2. Get security credentials
-    3.3 Create and configure your aws profile
-    3.4. Create an alias
-    3.5. Create a bucket
-    
-You can find the one time setup instructions [HERE](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/onetimesetup.md)
-    
- 
+`Note: MIT-IBM Watson AI Lab users can target'MITIBMWatsonAiLab' org and resource group. It is recomended to use your project-specific org name. If you use your project specific org your resource group name will be <orgname>_resourcegroup.`
+
+Use the "bx target" command to target the correct Cloud parameters.
+```
+$ bx target -r us-south -g MITIBMWatsonAiLab -o MITIBMWatsonAiLab -s dev
+```
+
+You can click [here](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/onetimesetup.md) and follow the instructions to set up your Cloud Object Store and Watson ML service.
+
+  
  ### [Steps for the Demo:](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/demo.md)
  
  0: Get a dataset
