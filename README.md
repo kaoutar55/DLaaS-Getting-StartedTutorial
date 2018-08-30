@@ -71,7 +71,7 @@ git clone https://github.com/IBM/DLaaS-Getting-StartedTutorial.git
 
 cd DLaaS-Getting-StartedTutorial
 ```
-After you cloned this repository, you can follow the inscructions [here](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/blob/master/onetimesetup.md) to run and monitor training in your DLaaS setup using our sample data and model.
+After you cloned this repository, you can follow the inscructions [here](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/blob/master/demo.md) to run and monitor training in your DLaaS setup using our sample data and model.
 
 
  **Click [HERE](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/usefulcommands.md)  for Other useful commands**
