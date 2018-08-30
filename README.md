@@ -51,6 +51,7 @@ $ bx login --apikey <your_api_key>
 #### Target correct Region, Resource group, Org and Space.
 After log in you need to target the correct region, organization, space and resourcegroup.
 It is recomended to target 'us-south' region and space 'dev'.
+You can find the list of orgs you have access to using the command `$ bx target account orgs`
 
 `Note: MIT-IBM Watson AI Lab users can target'MITIBMWatsonAiLab' org and resource group. It is recomended to use your project-specific org name. If you use your project specific org your resource group name will be <orgname>_resourcegroup.`
 
@@ -58,30 +59,15 @@ Use the "bx target" command to target the correct Cloud parameters.
 ```
 $ bx target -r us-south -g MITIBMWatsonAiLab -o MITIBMWatsonAiLab -s dev
 ```
+You can click [here](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/edit/master/onetimesetup.md) and follow the instructions to set up your Cloud Object Store and Watson ML service.
 
-You can click [here](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/onetimesetup.md) and follow the instructions to set up your Cloud Object Store and Watson ML service.
+ 
+ ### DLaas Tutorial with sample model and Data
+ 
+ After the setup from previous section, you are ready to use DLaaS to run your training. 
+ 
+ 
+ In this repository we provide you, sample data and model. You can follow the inscructions [here](https://github.com/mypublicorg/DLaaS-Getting-StartedTutorial/blob/master/demo.md) to run and monitor training in your DLaaS setup using our sample data and model.
 
-  
- ### [Steps for the Demo:](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/demo.md)
- 
- 0: Get a dataset
- 
- 1: Upload your dataset to the bucket
- 
- 2: Edit your manifest file
- 
-    2.1. Copy the template manifest
-    
-    2.2. Edit the configuration file
- 
- 3: Send code to run on Watson Studio!
- 
-    3.1. Zip all the code and models into a .zip file
-    
-    3.2. Send your code and manifest to IBM Watson Studio
- 
- 4: Monitor the training
- 
- **You can find the Steps for Demo [HERE](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/demo.md)**
 
  **Click [HERE](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/usefulcommands.md)  for Other useful commands**
