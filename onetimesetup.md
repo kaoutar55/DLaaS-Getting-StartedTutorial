@@ -1,19 +1,21 @@
 
+## Create a Watson ML Service Instance
+IBM [Watson Machine Learning (WML)](https://www.ibm.com/cloud/machine-learning) Service enables you to create, train, and deploy self-learning models using an automated, collaborative workflow. 
 
-## Step 2: Create a Watson ML Service Instance
 Below `pm-20` is the name of the Watson ML Service. 
 You create a new instance and give it a name, e.g., `myuseridMLinstance1`. Below, replace  <CLI_WMLi> by your chosen name.
 ```
 $ bx service create pm-20 standard <CLI_WMLi>
 ```
+Note: Please ignore warnings regarding payment.
 
-#### 2.1. Create an Access key for accessing your Watson ML service instance
+#### Create an Access key for accessing your Watson ML service instance
 Below, replace <key_CLI_WMLi>  by a key name of your choice.
 
 ```
 $ bx service key-create <CLI_WMLi> <key_CLI_WMLi>
 ```
-#### 2.2 Retrieve credentials:
+####  Retrieve credentials:
 ```
 $ instance_id=`bx service key-show <CLI_WMLi> <key_CLI_WMLi> | grep "instance_id"| awk -F": " '{print $2}'| cut -d'"' -f2`
 $ username=`bx service key-show <CLI_WMLi> <key_CLI_WMLi> | grep "username"| awk -F": " '{print $2}'| cut -d'"' -f2`
@@ -22,20 +24,20 @@ $ password=`bx service key-show <CLI_WMLi> <key_CLI_WMLi> | grep "password"| awk
 $ echo ""; echo "ML Instance Credentials:"; echo "instance_id: $instance_id"; echo "username: $username "; echo "password: $password"; echo ""
 ```
 
-#### 2.2 Set up Environment Variables:
+#### Set up Environment Variables:
 ```
 $ export ML_INSTANCE=$instance_id
 $ export ML_USERNAME=$username
 $ export ML_PASSWORD=$password
 ```
 
-## Step 3: Create a bucket in the Cloud Object Storage (COS) to store data
-
+##  Create a bucket in the Cloud Object Storage (COS) to store data
+[IBM Cloud Object Storage](https://www.ibm.com/cloud/object-storage) is an unstructured data storage service designed for durability, resiliency and security.
 A [bucket](https://datascience.ibm.com/docs/content/analyze-data/ml_dlaas_object_store.html) is a huge "folder" 
 in the COS. 
 You use the bucket to put and get any file or folder (e.g., your datasets).
 
-#### 3.1. Create a cloud storage instance:
+#### Create a cloud storage instance:
 
 Lets create a personal cloud storage instance to hold your bucket(s) and name the instance <my_COS_instance>.
 The `service-instance-create` command below creates the COS instance, and the `service-instance` command retrieves its attributes.
@@ -45,8 +47,7 @@ $ bx resource service-instance-create <my_COS_instance> cloud-object-storage sta
 $ bx resource service-instance <my_COS_instance>
 
 ```
-
-#### 3.2. Get security credentials:
+#### Get security credentials:
 
 Now create and get the credentials to access `my_COS_instance`.
 Give a name to your credentials (replace `<my_COS_key>` below).
@@ -65,7 +66,7 @@ export MY_BUCKET_KEY=$access_key_id
 export MY_BUCKET_SECRET_KEY=$secret_access_key
 ```
 
-#### 3.3 Create and configure your aws profile.
+####  Create and configure your aws profile.
 Use the `aws` tool to add `access_key_id` and `secret_access_key` to a aws-profile,
 and give a name to your aws-profile (Replace <my_aws_profile> below). 
 
@@ -75,7 +76,7 @@ $ aws configure --profile <my_aws_profile>
 The above command will ask for your `access_key_id` and `secret_access_key`.
 Press enter for all other fields requested. [none]
 
-#### 3.4. Create an alias to simplify the invocation of the aws command:
+####  Create an alias to simplify the invocation of the aws command:
 
 First, lets create an alias for repeating parts of the command (to avoid typing too much).
 
@@ -89,7 +90,7 @@ Windows OS users:
 doskey bxaws=aws --profile <my_aws_profile> --endpoint-url=http://s3-api.us-geo.objectstorage.softlayer.net $*
 ```
 
-#### 3.5. Create a bucket:
+####  Create a bucket:
 
 Now, lets make a bucket and name it something unique! Buckets are named globally, which means that only one IBM Cloud account can have a bucket with a particular name. 
 **NB: the bucket names may not contain upper-case, underscores, dashes, periods, etc. Just use simple text, and add your userid as part of the bucket name.  
@@ -97,6 +98,6 @@ Now, lets make a bucket and name it something unique! Buckets are named globally
 $ bxaws s3api create-bucket --bucket <your-bucket-name>
 ```
 
-## Congratulations you are done with the one-time SETUP!
+## Congratulations you are done with the setup!
 
 
