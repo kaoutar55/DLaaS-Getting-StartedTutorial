@@ -1,23 +1,4 @@
-## Step 0: [Pre-requisites](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/pre-req.md)
 
-Please make sure you have completed the prequisites before starting this tutorial.
-You can get the prequisites [here](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/pre-req.md)
-
-
-## Step 1: Login to IBM Cloud and target the correct area 
-
-### Step 1.1 Login Using API Key:   
-Login to your IBM Cloud account using the apiKey (see [pre-requisite document](https://github.com/mypublicorg/pytorch-cifar10-in-ibm-cloud/blob/master/pre-req.md) for details)
-
-```
-$ bx login --apikey <your_api_key>
-```
-
-## Step 1.2 Target correct Region, Resource group, Org and Space.
-Use the "bx target" command to target the correct Cloud parameters.
-```
-$ bx target -r us-south -g MITIBMWatsonAiLab -o MITIBMWatsonAiLab -s dev
-```
 
 ## Step 2: Create a Watson ML Service Instance
 Below `pm-20` is the name of the Watson ML Service. 
