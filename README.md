@@ -59,7 +59,7 @@ Use the "bx target" command to target the correct Cloud parameters.
 ```
 $ bx target -r us-south -g MITIBMWatsonAiLab -o MITIBMWatsonAiLab -s dev
 ```
-You can click [here](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/edit/master/onetimesetup.md) and follow the instructions to set up your Cloud Object Store and Watson ML service.
+You can click [here](https://github.com/nfairoza/DLaaS-Getting-StartedTutorial/master/onetimesetup.md) and follow the instructions to set up your Cloud Object Store and Watson ML service.
 
  
  ### DLaas Tutorial with sample model and Data
