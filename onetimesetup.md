@@ -43,7 +43,7 @@ Lets create a personal cloud storage instance to hold your bucket(s) and name th
 The `service-instance-create` command below creates the COS instance, and the `service-instance` command retrieves its attributes.
 
 ```
-$ bx resource service-instance-create <my_COS_instance> cloud-object-storage standard global
+$ bx resource service-instance-create <my_COS_instance> cloud-object-storage standard 
 $ bx resource service-instance <my_COS_instance>
 
 ```
